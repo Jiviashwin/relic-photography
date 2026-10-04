@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Relic Photography"
+description = "A premium wedding photography and cinematic videography website for Relic Photography in Erode, Tamil Nadu, with portfolio placeholders, service and package enquiries, local information, and direct contact options."
+version = "1.0.0"
+id = "artifacts/relic-photography"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22163
+
+[services.development]
+run = "pnpm --filter @workspace/relic-photography run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/relic-photography", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/relic-photography/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22163"
+BASE_PATH = "/"

@@ -1,0 +1,1 @@
+- [Relic content integrity](relic-content-integrity.md) — Never present placeholder photos or reviews as real work; don't invent commercial claims or pricing.
